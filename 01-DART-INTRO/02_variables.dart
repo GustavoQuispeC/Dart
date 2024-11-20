@@ -9,6 +9,14 @@ void main() {
   
   final sprites = <String>['ditto/front.png', 'ditto/back.png'];
   
+  //dynamic == null
+  
+  dynamic errorMessage = 'Hola';
+  errorMessage= true;
+  errorMessage=[1,2,3,4,5];
+  errorMessage={1,2,3,4,5};
+  errorMessage=()=>true;
+  errorMessage=null;
   
   
   
@@ -18,6 +26,7 @@ void main() {
   $isAlive
   $abilities
   $sprites
+  $errorMessage
   """);
  
 }
