@@ -1,22 +1,30 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-class CounterScreen extends StatefulWidget {
-  const CounterScreen({super.key});
+class CounterFunctionsScreen extends StatefulWidget {
+  const CounterFunctionsScreen({super.key});
 
   @override
-  State<CounterScreen> createState() => _CounterScreenState();
+  State<CounterFunctionsScreen> createState() => _CounterFunctionsScreenState();
 }
 
-class _CounterScreenState extends State<CounterScreen> {
+class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
   int clickCounter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter Screen'),
+        title: const Text('Counter Functions'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh_rounded),
+            onPressed: () {
+              setState(() {
+                clickCounter = 0;
+              });
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
