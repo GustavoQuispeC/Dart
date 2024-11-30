@@ -20,7 +20,7 @@ class MyMessageBubble extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
-              'Hola, ¿cómo estás?',
+              'Hola Laura, estoy bien, ¿y tú?',
               style: TextStyle(color: Colors.white),
             ),
           ),

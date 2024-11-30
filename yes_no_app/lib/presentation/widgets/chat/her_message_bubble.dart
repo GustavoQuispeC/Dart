@@ -20,7 +20,7 @@ class HerMessageBubble extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
-              'Hola,Mundo',
+              'Hola Gustavo, ¿cómo estás?',
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -35,15 +35,14 @@ class HerMessageBubble extends StatelessWidget {
 class _ImageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //da información sobre el tamaño de la pantalla del dispositivo
+    //!da información sobre el tamaño de la pantalla del dispositivo
     final size = MediaQuery.of(context).size;
-    
 
     return ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif',
-          width: size.width * 0.7,
+          'https://grupoaspasia.com/wp-content/uploads/2022/05/post_emojis_01.gif',
+          width: size.width * 0.7, //!70% del ancho de la pantalla
           height: 150,
           fit: BoxFit.cover,
           loadingBuilder: (context, child, loadingProgress) {
