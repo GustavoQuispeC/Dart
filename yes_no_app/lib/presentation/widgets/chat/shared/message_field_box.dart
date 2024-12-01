@@ -35,7 +35,8 @@ class MessageFieldBox extends StatelessWidget {
 
     return TextFormField(
       onTapOutside: (event) {
-        focusNode.unfocus(); //!Para quitar el foco del campo de texto, ocultando el teclado
+        focusNode
+            .unfocus(); //!Para quitar el foco del campo de texto, ocultando el teclado
       },
       focusNode: focusNode,
       controller: textController,
