@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/domain/entities/message.dart';
 
 class HerMessageBubble extends StatelessWidget {
-  const HerMessageBubble({super.key});
+  final Message message;
+
+  const HerMessageBubble({
+    super.key,
+    required this.message,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +23,26 @@ class HerMessageBubble extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
                   bottomRight: Radius.circular(20.0))),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          child: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Text(
-              'Hola Gustavo, ¿cómo estás?',
-              style: TextStyle(color: Colors.white),
+              message.text,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
         const SizedBox(height: 10.0),
-        _ImageBubble(),
+        _ImageBubble(message.imageUrl!),
       ],
     );
   }
 }
 
 class _ImageBubble extends StatelessWidget {
+  final String imageUrl;
+
+  const _ImageBubble(this.imageUrl);
   @override
   Widget build(BuildContext context) {
     //!da información sobre el tamaño de la pantalla del dispositivo
@@ -41,7 +51,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://grupoaspasia.com/wp-content/uploads/2022/05/post_emojis_01.gif',
+          imageUrl,
           width: size.width * 0.7, //!70% del ancho de la pantalla
           height: 150,
           fit: BoxFit.cover,
